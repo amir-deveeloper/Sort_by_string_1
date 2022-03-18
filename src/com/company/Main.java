@@ -10,26 +10,26 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Person[] persons = new Person[3];
-        persons[0] = new Person("Amir", "Khamidullin", 1, 30);
-        persons[1] = new Person("Bob", "Khamidullin", 2, 1);
-        persons[2] = new Person("Petya", "Antipov", 3, 15);
+        Friend[] friends = new Friend[3];
+        friends[0] = new Friend("Amir", "Khamidullin", 1, 30);
+        friends[1] = new Friend("Bob", "Khamidullin", 2, 1);
+        friends[2] = new Friend("Petya", "Antipov", 3, 15);
 
-        Arrays.sort(persons);
+        Arrays.sort(friends);
 
-        for (int i = 0; i < persons.length; i++)
-            System.out.println(persons[i]);
+        for (int i = 0; i < friends.length; i++)
+            System.out.println(friends[i]);
 
     }
 }
 
-class Person implements Comparable<Person> {
+class Friend implements Comparable<Friend> {
     public String firstname;
     public String lastname;
     public int phone;
     public int birth;
 
-    public Person(String firstname, String lastname, int phone, int birth){
+    public Friend(String firstname, String lastname, int phone, int birth){
         this.firstname = firstname;
         this.lastname = lastname;
         this.phone = phone;
@@ -45,15 +45,13 @@ class Person implements Comparable<Person> {
     }
 
     @Override
-    public int compareTo(Person o) {
+    public int compareTo(Friend o) {
         if(lastname.equals(o.lastname) == false) {
             return  this.lastname.compareTo(o.lastname);
         } else {
             return this.firstname.compareTo(o.firstname);
         }
 
-        //return this.name.compareTo(o.name);
-        //return this.age-o.age;
     }
 }
 
